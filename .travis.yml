@@ -9,7 +9,7 @@ before_install:
 script:
   - docker run -e CI=true lprates/react-test npm run test
 
-  after_success:
+after_success:
   - docker build -t lprates/multi-client ./client
   - docker build -t lprates/multi-nginx ./nginx
   - docker build -t lprates/multi-server ./server
